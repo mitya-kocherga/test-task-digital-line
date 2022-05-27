@@ -1,0 +1,34 @@
+@import 'components/Table/Table.scss';
+@import 'components/Toolbar/Toolbar.scss';
+@import 'components/Input/Input.scss';
+@import 'components/Form/Form.scss';
+@import 'components/Buttons/Button.scss';
+@import 'components/Buttons/LinkButton.scss';
+@import 'components/Buttons/IconButton.scss';
+@import 'components/DropDown/DropDown.scss';
+@import 'components/Modal/Modal.scss';
+
+.App {
+  background-color: #E5E8ED;
+  padding: 50px 0;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.Forms-work-area {
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}

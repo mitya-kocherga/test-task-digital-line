@@ -1,0 +1,24 @@
+.toolbar {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+
+    &__button {
+        height: 24px !important;
+        width: 90px;
+    }
+
+
+    &__button-container {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    &__container {
+        width: calc(90% - 4px);
+        display: flex;
+        justify-content: flex-end;
+    }
+}
