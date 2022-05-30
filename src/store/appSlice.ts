@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {RootState} from './store';
 import uniqueId  from 'lodash/uniqueId';
 import omit  from 'lodash/omit';
 import { initialState } from './initialState';
@@ -77,8 +76,5 @@ export const {
   editRow,
   deleteTable
 } = counterSlice.actions;
-
-export const selectForm = (state: RootState) => state.app.form;
-export const selectTables = (state: RootState) => state.app.tables;
 
 export default counterSlice.reducer;

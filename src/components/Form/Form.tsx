@@ -16,10 +16,9 @@ interface P {
   formState: FormI;
   setError: (arg0: errorType) => void;
 }
-//TODO: get it from the store?
 const menuList = [
   {value: 'riga', label: 'Riga'},
-  {value: 'city2', label: 'Riga2'},
+  {value: 'city2', label: 'City2'},
   {value: 'riga3', label: 'Riga3'},
 ];
 

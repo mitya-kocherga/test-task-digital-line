@@ -1,9 +1,10 @@
-import {useEffect, useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import cn from 'classnames';
 import Image from '../Image';
 import Portal from '../Portal';
 import ArrowDown from '../../assets/dropdown/arrow_down.svg';
 import ArrowUp from '../../assets/dropdown/arrow_up.svg';
+import {useBlockPosition} from '../../hooks/useBlockPosition';
 
 interface P {
   value: string;
@@ -15,13 +16,6 @@ interface P {
   }>;
 }
 
-interface Coords {
-  left: number;
-  top: number;
-  width: number;
-}
-
-//TODO: add outside click
 function DropDownComponent({
   value,
   onChangeHandler,
@@ -29,34 +23,14 @@ function DropDownComponent({
   menuList,
 }: P): React.ReactElement<P> {
   const [isOpen, setIsOpen] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-  /* prettier-ignore */ const [coords, setCoords] = useState<Coords | null>(null);
-
-  // ToDO move to separate hook
-  const getCoords = (): Coords | null => {
-    const box = inputRef.current?.getBoundingClientRect();
-
-    if (box) {
-      return {
-        left: box.left,
-        top: box.top + box.height,
-        width: box.width,
-      };
-    }
-    return null;
-  };
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const coords = getCoords();
-    setCoords(coords);
-  }, [isOpen]);
+  /* prettier-ignore */ const inputRef = useRef<HTMLInputElement>(null);
+  const [coords] = useBlockPosition(isOpen, inputRef);
 
   const clickHandler = (event: React.BaseSyntheticEvent) => {
     setIsOpen(!isOpen);
     onChangeHandler(event.target.id);
   };
+
   return (
     <div className="dropdown">
       <div

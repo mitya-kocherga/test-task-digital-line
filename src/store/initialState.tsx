@@ -12,8 +12,7 @@ export const initialState: AppState = {
   tables: [
     {
       id: uniqueId(),
-      rows: [
-      ],
+      rows: [],
       isMainTable: true,
     },
   ],

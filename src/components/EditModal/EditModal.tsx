@@ -3,7 +3,7 @@ import Form from '../Form';
 import Modal from '../Modal';
 import {changeHandlerType, DataRow, errorType, idType} from '../../store/types';
 import {useAppSelector} from '../../store/hooks';
-import {selectTables} from '../../store/appSlice';
+import {selectTables} from '../../store/selectors';
 import omit from 'lodash/omit';
 
 export interface EditableRow {

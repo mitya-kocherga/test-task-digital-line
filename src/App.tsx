@@ -1,23 +1,21 @@
+import {Fragment, useState} from 'react';
 import Table from './components/Table/Table';
 import Toolbar from './components/Toolbar';
 import Form from './components/Form';
 import EditModal from './components/EditModal';
 import './App.scss';
-
 import {
   changeForm,
-  selectForm,
   setErrorsForm,
-  selectTables,
   copyTable,
   addTableRow,
   deleteRow,
   deleteTable,
   editRow,
 } from './store/appSlice';
+import {selectForm, selectTables} from './store/selectors';
 import {changeHandlerType, errorType, idType, DataRow} from './store/types';
 import {useAppDispatch, useAppSelector} from './store/hooks';
-import {Fragment, useState} from 'react';
 import {EditableRow} from './components/EditModal/EditModal';
 
 function App() {
