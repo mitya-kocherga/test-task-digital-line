@@ -1,8 +1,10 @@
+@import "../../styles/mixin.scss";
+
+$border: 2px solid var(--table-border-color);
+
 .table-component {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include justify;
 
   &__table.table {
     width: 90%;
@@ -13,24 +15,21 @@
   }
 
   &__toolbar-container {
-    display: flex;
-    align-items: center;
+    @include justify;
     justify-content: space-evenly;
   }
 }
 
 .table {
-  border: 2px solid #EBEBEB;
-  border-spacing: 0px;
+  border: $border;
   border-collapse: collapse;
   text-align: left;
-  color: #868A8D;
-  background-color: #fff;
+  color: var(--placeholder-gray);
+  background-color: var(--white);
 
   &__header {
-    color: #ffffff80;
-    text-decoration-color: #fff;
-    background-color: #0A508B;
+    color: var(--table-header-text-color);
+    background-color: var(--table-header-background);
 
     .table__row {
       height: 30px;
@@ -50,13 +49,11 @@
   }
 
   &__cell {
-    border: 2px solid #EBEBEB;
+    border: $border;
     padding-left: 10px;
 
     &:last-of-type {
       height: inherit;
     }
-
-
   }
 }

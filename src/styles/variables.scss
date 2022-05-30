@@ -1,0 +1,12 @@
+$screen-breakpoints: (
+  small: 550px,
+  medium: 850px,
+  large: 1024px,
+);
+
+$small-screen: map_get($screen-breakpoints, 'small');
+$medium-screen: map_get($screen-breakpoints, 'medium');
+$large-screen: map_get($screen-breakpoints, 'large');
+
+$input-max-width: 248px;
+$input-padding: 14px;

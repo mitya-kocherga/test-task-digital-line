@@ -1,3 +1,6 @@
+@import 'styles/root-vars.scss';
+@import 'styles/mixin.scss';
+
 @import 'components/Table/Table.scss';
 @import 'components/Toolbar/Toolbar.scss';
 @import 'components/Input/Input.scss';
@@ -9,14 +12,9 @@
 @import 'components/Modal/Modal.scss';
 
 .App {
-  background-color: #E5E8ED;
+  background-color: var(--app-background);
   padding: 50px 0;
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  @include font;
 }
 
 .Forms-work-area {
@@ -26,9 +24,8 @@
   display: flex;
   margin-bottom: 50px;
 
-  @media screen and (max-width: 850px) {
-    flex-direction: column;
+  @media screen and (max-width: $medium-screen) {
+    @include flex-column;
     gap: 20px;
   }
-
 }

@@ -1,33 +1,31 @@
+@import "../../styles/mixin.scss";
+
 @mixin default-approach-form {
+    @include flex-column;
     justify-content: center;
-    display: flex;
-    flex-direction: column;
+    width: 280px;
 
-    max-width: 280px;
-    width: 100%;
-
-    background-color: #fff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: var(--white);
+    box-shadow: 0px 4px 4px var(--box-shadow);
     padding: 20px 16px;
     border-radius: 4px;
 
 }
 
 @mixin default-approach-container {
-    height: 320px;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     align-items: center;
     justify-content: space-evenly;
+    height: 320px;
 }
 
 .form {
     @include default-approach-form;
 
     &_two-c {
-        max-width: 565px;
+        width: 565px;
 
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: $small-screen) {
             @include default-approach-form;
         }
     }
@@ -40,7 +38,7 @@
             gap: 6px;
             flex-wrap: wrap;
 
-            @media screen and (max-width: 550px) {
+            @media screen and (max-width: $small-screen) {
                 @include default-approach-container;
             }
         }

@@ -1,14 +1,16 @@
+@import "../../styles/mixin.scss";
+
 .link-button {
-    font-size: 12px;
+    @include font;
     text-decoration-line: underline;
     cursor: pointer;
 
     &_primary {
-        color: #057AE3;
+        color: var(--button-primary-darkered);
     }
 
     &_dangerous {
-        color: #B0263D;
+        color: var(--dangerous);
     }
 
 }

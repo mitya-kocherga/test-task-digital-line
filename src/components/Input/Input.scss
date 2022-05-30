@@ -1,22 +1,18 @@
-.input {
-    border-radius: 4px;
-    padding: 14px;
-    border: 1px solid #E6ECEF;
-    color: #000;
+@import "../../styles/variables.scss";
 
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
+.input {
+    @include font;
+    border-radius: 4px;
+    padding: $input-padding;
+    border: 1px solid var(--border-gray);
+    color: var(--black);
 
     &_error {
-        border-color: #B0263D;
+        border-color: var(--dangerous);
 
         &:focus-visible {
-            outline: 1px solid #B0263D;
+            outline: 1px solid var(--dangerous);
         }
-
     }
 
     &:focus::placeholder {
@@ -24,7 +20,7 @@
     }
 
     &::placeholder {
-        color: #868A8D;
+        color: var(--placeholder-gray);
     }
 
     &::-webkit-outer-spin-button,
@@ -34,11 +30,11 @@
     }
 
     &__container {
-        display: flex;
-        flex-direction: column;
-        max-width: 248px;
+        @include flex-column;
+        max-width: $input-max-width;
         width: 100%;
     }
+
     &__error-container {
         height: 14px;
     }

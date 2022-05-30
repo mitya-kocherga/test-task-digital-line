@@ -1,13 +1,12 @@
+@import "../../styles/mixin.scss";
+
 .button {
+    @include font;
     border-radius: 4px;
-    background-color: #1493FE;
-    color: white;
+    background-color: var(--button-primary);
+    color: var(--white);
     height: 42px;
     cursor: pointer;
-
-    font-family: 'Roboto';
-    font-weight: 700;
-    font-size: 12px;
     border: none;
 
     &:active {
@@ -15,12 +14,12 @@
     }
 
     &:hover {
-        background: #1187e7;
+        background: var(--button-primary-darkered);
     }
 
     &:disabled {
-        background: #C2CBD1;
-        color: #fff;
+        background: var(--button-disabled);
+        color: var(--white);
         opacity: 0.7;
         cursor: default;
     }
